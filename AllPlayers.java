@@ -18,5 +18,10 @@ public class AllPlayers
 	{
 		return players.get(players.size()-1);
 	}
+	
+	public static ArrayList<Player> getPlayers()
+	{
+		return players;
+	}
 
 }

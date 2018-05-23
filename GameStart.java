@@ -2,8 +2,11 @@ import javafx.application.Application;
 import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
 import java.util.ArrayList;
+import java.util.Collections;
+
 import javafx.application.*;
 import javafx.stage.*;
+import sun.nio.cs.ext.IBM037;
 import javafx.scene.*;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -24,17 +27,17 @@ import java.io.IOException;
 public class GameStart extends Application
 {
 	Stage window;
-	AllPlayers a;
+	private static AllPlayers a;
 	
 	public static void main(String args[])
 	{
+		a = new AllPlayers();
 		launch(args); //NEED THIS TO RUN PROGRAM
 	}
 	
 	// start(Stage stage) is an abstract method in the Application class which our game extends(is a sub-class of)
 	public void start(Stage primaryStage) throws Exception
 	{
-		a = new AllPlayers();
 		window = primaryStage;
 		// refers to FXML file where the menu was created
 		Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
@@ -104,7 +107,7 @@ public class GameStart extends Application
 				}
 				);
 		
-		// Defines the graphcis
+		// Defines the graphics
 		GraphicsContext graph = play.getGraphicsContext2D();
 		
 		//Creates the players rocket
@@ -113,11 +116,19 @@ public class GameStart extends Application
 		// creates an arraylist of asteroid objects
 		ArrayList<Asteroids> a = new ArrayList<>();
 		
+		//creates an arraylist of stars
+		ArrayList<Stars> s = new ArrayList<>();
 		// adds a few asteroids to start off
 		for(int i =0; i < 3; i++)
 		{
 			Asteroids ast = new Asteroids();
 			a.add(ast);
+		}
+		
+		// adds a few stars at the beginning
+		for(int i = 0; i < 3; i++)
+		{
+			s.add(new Stars());
 		}
 		
 		//can't call primitives so i had to create a class
@@ -126,6 +137,7 @@ public class GameStart extends Application
 		//creates the animation which runs at 60 frames per second
 		new AnimationTimer()
 		{
+			int numCoins;
 			double time; //how long since the game started
 			double timeX; //time multiplier for speed of asteroids
 			double freqA; // frequency of asteroids
@@ -148,25 +160,37 @@ public class GameStart extends Application
 					a.add(new Asteroids());
 				r.render(graph);
 				
+				if(time%0.5<0.003)
+					s.add(new Stars());
+				
 				r.setVelocity(0);
 				if(input.contains("LEFT"))
-					r.setVelocity(-50);
+					r.setVelocity(-75);
 				if(input.contains("RIGHT"))
-					r.setVelocity(20);
+					r.setVelocity(75);
 				
 				if((r.getPosition()<=0&& r.getVelocity()<0) || (r.getPosition()>=785 && r.getVelocity()>0))
 					r.setVelocity(0);
 				
 				r.newPosition(elapsed);
 				
+				// draws asteroid
 				for(Asteroids ast: a)
 					ast.render(graph);
+				
+				// draws star
+				for(Stars st: s)
+				{	
+					st.render(graph);
+					st.newPosition(elapsed);
+				}
 				
 				for(int i = 0; i < a.size(); i++)
 				{
 					Asteroids ast = a.get(i);
 					ast.setVelocity(timeX);
-					ast.newPosition(elapsed);
+					ast.newPosition(elapsed);										
+					// checks to see if hitting asteroid
 					if(r.getPosition()-ast.getPositionX()<=50 && r.getPosition()-ast.getPositionX()>=-50 && ast.getPositionY()>=390 && ast.getPositionY()<=470)
 					{
 						stop();
@@ -174,12 +198,20 @@ public class GameStart extends Application
 						try {
 							gameOverScreen(window);
 						} catch (IOException e) {
-							// TODO Auto-generated catch block
 							System.out.println("I suck");
 						}
 					}
+					
 				}
 				
+				for(int i = 0; i < s.size(); i++)
+				{
+					Stars st = s.get(i);
+					st.setVelocity(time/1.5);
+					st.newPosition(elapsed);										
+					
+				
+				}
 				String scoreDisplay = "Score: " + (int)(time);
 				Font f = Font.font( "Arial", FontWeight.BOLD, 30 );
 				graph.setFont(f);
@@ -194,7 +226,7 @@ public class GameStart extends Application
 	
 	public void gameOverScreen(Stage window) throws IOException
 	{
-		Parent root = FXMLLoader.load(getClass().getResource("endScreen.fxml"));;
+		Parent root = FXMLLoader.load(getClass().getResource("endScreen.fxml"));
 		AnchorPane v = new AnchorPane();
 		VBox x = new VBox(20);
 		Label s = new Label("Score: " + AllPlayers.getPlayer().getLatestScore());
@@ -206,6 +238,90 @@ public class GameStart extends Application
 		x.getChildren().addAll(hi, s);
 		v.getChildren().addAll(root, x);
 		window.setScene(new Scene(v,850,476));
+	}
+	
+	public void enterShopMain(Stage window) throws IOException
+	{
+		Parent root = FXMLLoader.load(getClass().getResource("shopmain.fxml"));
+		window.setScene(new Scene(root,850,476));
+	}
+	
+	public void selectShipScreen(Stage window) throws IOException
+	{
+		Parent root = FXMLLoader.load(getClass().getResource("selectShipScreen.fxml"));
+		AnchorPane v = new AnchorPane();
+		Label s = new Label("Current Rocket: " + AllPlayers.getPlayer().getPrimaryRocketName());
+		s.setFont(new Font("Arial", 20));
+		s.setTextFill(Color.ORANGE);
+		String text = "Rockets Owned: ";
+		for(int i = 0; i < 5; i++)
+		{
+			if(AllPlayers.getPlayer().getRockets().get(i).getBought())
+			{
+				text += AllPlayers.getPlayer().getRockets().get(i).getRocketName() + "|";
+			}
+		}
+		Label temp = new Label(text);
+		temp.setFont(new Font("Arial", 20));
+		temp.setTextFill(Color.ORANGE);
+		VBox d = new VBox(20);
+		d.getChildren().addAll(s, temp);
+		v.getChildren().addAll(root, d);
+		window.setScene(new Scene(v, 850, 476));
+	}
+	
+	public void highScoresScreen(Stage window) throws IOException
+	{
+		Parent root = FXMLLoader.load(getClass().getResource("highScoresScreen.fxml"));
+		StackPane stack = new StackPane();
+		BorderPane p = new BorderPane();
+		VBox v = new VBox(20);
+		ArrayList<ScoreSorter> scores = new ArrayList<ScoreSorter>();
+		for(int i = 0; i < AllPlayers.getPlayers().size(); i++)
+		{
+			ArrayList<Integer> temp = AllPlayers.getPlayers().get(i).getScores();
+			int numSco = 0;
+			while(numSco<5 && numSco<temp.size())
+			{
+				int high = 0;
+				for(int j = 0; j < temp.size(); j++)
+				{
+					if(temp.get(j)>high)
+					{		
+						high = temp.get(j);
+						temp.remove(j);
+					}
+					
+				}
+				scores.add(new ScoreSorter(AllPlayers.getPlayers().get(i).getName(), high));
+				numSco++;
+			}
+		}
+		
+		Collections.sort(scores);
+		for(int i = 0; i < scores.size(); i++)
+		{
+			System.out.println(scores.get(i).getScore());
+		}
+		
+		int highScores = 1;
+		String temp = "";
+		
+		while(highScores <= 5 && (highScores-1) <scores.size())
+		{
+			System.out.println("reached");
+			temp += highScores + ". " + scores.get(highScores-1).getName() + ": " + scores.get(highScores-1).getScore() + "\n";   
+			highScores++;
+		}
+		
+		Label s = new Label(temp);
+		s.setFont(new Font("Arial", 20));
+		s.setTextFill(Color.WHITE);
+		v.getChildren().add(s);
+		p.setCenter(v);
+		stack.getChildren().addAll(root, p);
+		
+		window.setScene(new Scene(stack, 850,476));
 	}
 	
 }

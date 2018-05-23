@@ -5,27 +5,28 @@ import javafx.scene.image.Image;
 
 public class Asteroids {
 
-	private ArrayList<String> filename;
+	private ArrayList<Image> filename;
 	private double velocityY;
 	private double positionY;
-	private double positionX;
+	private double positionX; 
+	private Image image;
 	
 	public Asteroids()
 	{
 		filename = new ArrayList<>();
-		filename.add("moneybag.png");
-		filename.add("moneybag.png");
-		filename.add("moneybag.png");
-		filename.add("moneybag.png");
-		filename.add("moneybag.png");
-		filename.add("moneybag.png");
-		filename.add("moneybag.png");
+		filename.add(new Image("Asteroid1.gif", 150, 200, true, false));
+		filename.add(new Image("Asteroid2.gif", 150, 200, true, false));
+		filename.add(new Image("Asteroid3.gif", 150, 200, true, false));
+		filename.add(new Image("Asteroid4.gif", 150, 200, true, false));
+		filename.add(new Image("Asteroid5.gif", 150, 200, true, false));
+		filename.add(new Image("Asteroid6.gif", 150, 200, true, false));
+		filename.add(new Image("asteroid.png", 64, 64, true, false));
 		velocityY = 0;
 		positionY = 0;
 		positionX = Math.random()*800;
-		
+		image = filename.get((int)(Math.random()*7));
 	}
-	
+
 	public void setVelocity(double y)
 	{
 		velocityY = y;
@@ -44,6 +45,6 @@ public class Asteroids {
 	}
 	public void render(GraphicsContext g)
 	{
-		g.drawImage(new Image(filename.get((int)(Math.random()*filename.size()))), positionX, positionY);
+		g.drawImage(image, positionX, positionY);
 	}
 }
