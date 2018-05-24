@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="451.0" fitWidth="616.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@MoneyBoi.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <AnchorPane prefHeight="417.0" prefWidth="628.0">
+         <children>
+            <Button fx:id="moreCash1" layoutX="69.0" layoutY="65.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="104.0" text="Cash 1.1x" />
+            <Button fx:id="moreCash2" layoutX="390.0" layoutY="65.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="104.0" text="Cash 1.3x" />
+            <Button fx:id="moreCash3" layoutX="69.0" layoutY="206.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="104.0" text="Cash 1.5x" />
+            <Button fx:id="moreCash4" layoutX="390.0" layoutY="215.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="104.0" text="Cash 1.7x" />
+            <Label layoutX="84.0" layoutY="29.0" prefHeight="36.0" prefWidth="104.0" text="\$1,500">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#fff428" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="76.0" layoutY="164.0" prefHeight="36.0" prefWidth="104.0" text="\$12,500">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#fff428" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="390.0" layoutY="29.0" prefHeight="36.0" prefWidth="104.0" text="\$5,000">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#fff428" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="390.0" layoutY="170.0" prefHeight="36.0" prefWidth="104.0" text="\$40,000">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#fff428" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
