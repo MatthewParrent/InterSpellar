@@ -20,7 +20,7 @@
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="armorButton" layoutX="340.0" layoutY="216.0" mnemonicParsing="false" style="-fx-background-color: #f4eeee;" text="Upgrade Armor" textFill="#ee0505">
+            <Button fx:id="armorButton" layoutX="340.0" layoutY="216.0" mnemonicParsing="false" onAction="#armorButtonClicked" style="-fx-background-color: #f4eeee;" text="Upgrade Armor" textFill="#ee0505">
                <font>
                   <Font size="20.0" />
                </font>

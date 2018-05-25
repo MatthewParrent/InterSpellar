@@ -8,17 +8,25 @@ public class Player // class with info about the player
 	private ArrayList<Rocket> rockets;
 	private Rocket primaryRocket;
 	private int coins;
+	private String pRocketName;
+	
 	
 	//constructor
 	public Player(String n) // gets passed the players name
 	{
-		// initiliazes instance variables
+		// initializes instance variables
 		name = n; //sets passed name to this
 		scores = new ArrayList<>();
 		highScore = 0;
 		AllPlayers.addPlayer(this); // adds this player to the arraylist of players
 		rockets = new ArrayList<Rocket>();
+		rockets.add(new Rocket("RocketShip.gif"));
+		rockets.add(new Rocket("FXWing.gif"));
+		rockets.add(new Rocket("Rocket3.gif"));
+		rockets.add(new Rocket("MilleniumHawk.gif"));
+		rockets.add(new Rocket("DebtStar.png"));
 		buyBaseRocket();
+		pRocketName = "Apollo '18";
 		coins = 0;
 	}
 	
@@ -54,17 +62,65 @@ public class Player // class with info about the player
 	
 	public void changePrimaryRocket(int i)
 	{
-		primaryRocket = rockets.get(i);
+		if(rockets.get(i).getBought())
+		{	
+			primaryRocket = rockets.get(i);
+			if(i == 0)
+				pRocketName = "Apollo '18";
+			if(i == 1)
+				pRocketName = "FX - Wing";
+			if(i == 2)
+				pRocketName = "Black One";
+			if(i == 3)
+				pRocketName = "Millenium Hawk";
+			if(i == 4)
+				pRocketName = "Debt Star";
+		}
 	}
 	
 	public void buyBaseRocket()
 	{
-		rockets.add(new BaseRocket("briefcase.png"));
-		primaryRocket = rockets.get(rockets.size()-1);
+		rockets.get(0).setBought(true);
+		primaryRocket = rockets.get(0);
 	}
 	
+	public void buyFXWing()
+	{
+		rockets.get(1).setBought(true);
+		primaryRocket = rockets.get(1);
+	}
+	
+	public void buyBlackOne()
+	{
+		rockets.get(2).setBought(true);
+		primaryRocket = rockets.get(2);
+	}
+	
+	public void buyMilleniumHawk()
+	{
+		rockets.get(3).setBought(true);
+		primaryRocket = rockets.get(3);
+	}
+	
+	public void buyDebtStar()
+	{
+		rockets.get(4).setBought(true);
+		primaryRocket = rockets.get(4);
+	}
 	public Rocket getPrimaryRocket()
 	{
 		return primaryRocket;
+	}
+	public String getPrimaryRocketName()
+	{
+		return pRocketName;
+	}
+	public ArrayList<Integer> getScores()
+	{
+		return scores;
+	}
+	public ArrayList<Rocket> getRockets()
+	{
+		return rockets;
 	}
 }
