@@ -19,10 +19,10 @@ public class HomeController extends GameStart
 	{
 		// gets window information from the event
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-		Player p = new Player(nameTextField.getText());
-		
-		enterPlayerMenu(window);
-		
+		if(!nameTextField.getText().equals(""))
+		{	Player p = new Player(nameTextField.getText());
+			enterPlayerMenu(window);
+		}
 	}
 	
 }
