@@ -12,6 +12,11 @@ public class LongV
     	return value;
     }
     
+    public void removeOne()
+    {
+    	value--;
+    }
+    
     public void set(long a)
     {
     	value = a;

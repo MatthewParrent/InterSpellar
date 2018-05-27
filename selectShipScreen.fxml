@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SelectShipController">
+   <children>
+      <AnchorPane prefHeight="476.0" prefWidth="850.0">
+         <children>
+            <ImageView fitHeight="650.0" fitWidth="850.0" layoutX="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@aircraft-hangar-terminal-hangar06.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="ApolloButton" layoutX="26.0" layoutY="259.0" mnemonicParsing="false" onAction="#ApolloButtonClicked" text="Apollo '18">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="FXWingButton" layoutX="178.0" layoutY="260.0" mnemonicParsing="false" onAction="#FXWingButtonClicked" text="FX-Wing">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="114.0" fitWidth="47.0" layoutX="67.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@RocketShip.gif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="90.0" fitWidth="96.0" layoutX="190.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@FXWing.gif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="123.0" fitWidth="129.0" layoutX="702.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@DebtStar.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="90.0" fitWidth="69.0" layoutX="363.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Rocket3.gif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="100.0" fitWidth="83.0" layoutX="538.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@MilleniumHawk.gif" />
+               </image>
+            </ImageView>
+            <Button fx:id="BlackOneButton" layoutX="332.0" layoutY="260.0" mnemonicParsing="false" onAction="#BlackOneButtonClicked" text="Black One">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Label layoutX="323.0" layoutY="28.0" text="Select Ship" textFill="#00b0fc">
+               <font>
+                  <Font name="System Bold" size="53.0" />
+               </font>
+            </Label>
+            <Button fx:id="playerMenuButton" layoutX="371.0" layoutY="467.0" mnemonicParsing="false" onAction="#playerMenuButtonClicked" text="Back To Player Menu">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Button>
+            <Button fx:id="DebtStarButton" layoutX="709.0" layoutY="259.0" mnemonicParsing="false" onAction="#DebtStarButtonClicked" text="Debt Star">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="MilleniumHawkButton" layoutX="492.0" layoutY="260.0" mnemonicParsing="false" onAction="#MilleniumHawkButtonClicked" text="Millenium Hawk">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
