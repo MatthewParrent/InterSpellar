@@ -38,7 +38,7 @@ public class GameStart extends Application
 	}
 	
 	// start(Stage stage) is an abstract method in the Application class which our game extends(is a sub-class of)
-	public void start(Stage primaryStage) throws Exception
+	public void start(Stage primaryStage) throws Exception //loads the game's first screen
 	{
 		window = primaryStage;
 		// refers to FXML file where the menu was created
@@ -51,7 +51,7 @@ public class GameStart extends Application
 		window.show(); //NEED THIS TO SEE ANYTHING
 	}
 	
-	public void enterPlayerMenu(Stage window) throws IOException
+	public void enterPlayerMenu(Stage window) throws IOException //loads the player menu
 	{
 		// refers to FXML file where player Menu was created
 		Parent root = FXMLLoader.load(getClass().getResource("playerMenu.fxml"));
@@ -59,7 +59,7 @@ public class GameStart extends Application
 		window.setScene(new Scene(root, 850, 476));
 	}
 	
-	public void playGame(Stage window) throws IOException
+	public void playGame(Stage window) throws IOException // loads the game itself
 	{
 		Group root = new Group();
 		Scene gameScreen = new Scene(root); // creates the gameScreen scene
@@ -140,7 +140,7 @@ public class GameStart extends Application
 		LongV hits = new LongV(AllPlayers.getPlayer().getPrimaryRocket().getArmor());
 		
 		//generate random type request
-		LongV ran =  new LongV((int)(Math.random()*550));
+		LongV ran =  new LongV((int)(Math.random()*700));
 		
 		ArrayList<TypeAsker> ty = new ArrayList<>();
 		//creates the animation which runs at 60 frames per second
@@ -273,7 +273,7 @@ public class GameStart extends Application
 		window.setScene(gameScreen);
 	}
 	
-	public void gameOverScreen(Stage window) throws IOException
+	public void gameOverScreen(Stage window) throws IOException // loads the game over screen
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("endScreen.fxml"));
 		AnchorPane v = new AnchorPane();
@@ -289,7 +289,7 @@ public class GameStart extends Application
 		window.setScene(new Scene(v,850,476));
 	}
 	
-	public void enterShopMain(Stage window) throws IOException
+	public void enterShopMain(Stage window) throws IOException // loads shop's main screen
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("shopmain.fxml"));
 		AnchorPane stack = new AnchorPane();
@@ -300,7 +300,7 @@ public class GameStart extends Application
 		window.setScene(new Scene(stack,850,476));
 	}
 	
-	public void selectShipScreen(Stage window) throws IOException
+	public void selectShipScreen(Stage window) throws IOException // loads the select ship screen
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("selectShipScreen.fxml"));
 		AnchorPane v = new AnchorPane();
@@ -324,7 +324,7 @@ public class GameStart extends Application
 		window.setScene(new Scene(v, 850, 476));
 	}
 	
-	public void highScoresScreen(Stage window) throws IOException
+	public void highScoresScreen(Stage window) throws IOException //loads high scores screen
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("highScoresScreen.fxml"));
 		BorderPane p = new BorderPane();
@@ -387,7 +387,7 @@ public class GameStart extends Application
 		window.setScene(new Scene(stack, 850,476));
 	}
 	
-	public void updateBoughtScreen(Stage window) throws IOException
+	public void updateBoughtScreen(Stage window) throws IOException // loads the buy a ship screen
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("buyShipScreen.fxml"));
 		AnchorPane stack = new AnchorPane();
@@ -411,7 +411,7 @@ public class GameStart extends Application
 		window.setScene(new Scene(stack,850,476));
 	}
 	
-	public void loadArmorScreen(Stage window) throws IOException
+	public void loadArmorScreen(Stage window) throws IOException // loads the armor screen
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("armorScreen.fxml"));
 		AnchorPane stack = new AnchorPane();
@@ -430,7 +430,7 @@ public class GameStart extends Application
 		window.setScene(new Scene(stack,850,476));
 	}
 	
-	public void loadCashXScreen(Stage window) throws IOException
+	public void loadCashXScreen(Stage window) throws IOException //loads the cash multiplier screen
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("cashXScreen.fxml"));
 		AnchorPane stack = new AnchorPane();

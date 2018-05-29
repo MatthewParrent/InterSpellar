@@ -14,14 +14,14 @@ public class SelectShipController extends GameStart
 	@FXML private Button MilleniumHawkButton;
 	@FXML private Button DebtStarButton;
 	
-	public void playerMenuButtonClicked(ActionEvent e) throws Exception
+	public void playerMenuButtonClicked(ActionEvent e) throws Exception // what happens when you click the player menu button
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 		
 		enterPlayerMenu(window);
 	}
 	
-	public void ApolloButtonClicked(ActionEvent e) throws Exception
+	public void ApolloButtonClicked(ActionEvent e) throws Exception // what happens when you select apollo 18
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 		
@@ -29,7 +29,7 @@ public class SelectShipController extends GameStart
 		selectShipScreen(window);
 	}
 	
-	public void BlackOneButtonClicked(ActionEvent e) throws Exception
+	public void BlackOneButtonClicked(ActionEvent e) throws Exception // what happens when you select Black one
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 		
@@ -38,7 +38,7 @@ public class SelectShipController extends GameStart
 
 	}
 	
-	public void FXWingButtonClicked(ActionEvent e) throws Exception
+	public void FXWingButtonClicked(ActionEvent e) throws Exception // what happens when you select FX Wing
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 		
@@ -47,7 +47,7 @@ public class SelectShipController extends GameStart
 
 	}
 	
-	public void MilleniumHawkButtonClicked(ActionEvent e) throws Exception
+	public void MilleniumHawkButtonClicked(ActionEvent e) throws Exception // what happens when you select Millenium Hawk
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 		
@@ -56,7 +56,7 @@ public class SelectShipController extends GameStart
 
 	}
 	
-	public void DebtStarButtonClicked(ActionEvent e) throws Exception
+	public void DebtStarButtonClicked(ActionEvent e) throws Exception // what happens when debt star is selected
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 		

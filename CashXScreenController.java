@@ -12,14 +12,14 @@ public class CashXScreenController extends GameStart
 	@FXML private Button x15Button;
 	@FXML private Button x17Button;
 	
-	public void playerMenuButtonClicked(ActionEvent e) throws Exception
+	public void playerMenuButtonClicked(ActionEvent e) throws Exception // what happens when player menu button is clicked
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 		
 		enterPlayerMenu(window);
 	}
 	
-	public void x11Clicked(ActionEvent e) throws Exception
+	public void x11Clicked(ActionEvent e) throws Exception // what happens when x11 is clicked
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 		if(AllPlayers.getPlayer().getCoins()>=1500 && AllPlayers.getPlayer().getCashX()<1.1)
@@ -29,7 +29,7 @@ public class CashXScreenController extends GameStart
 		}
 		loadCashXScreen(window);
 	}
-	public void x13Clicked(ActionEvent e) throws Exception
+	public void x13Clicked(ActionEvent e) throws Exception // what happens when x13 is clicked
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 		
@@ -41,7 +41,7 @@ public class CashXScreenController extends GameStart
 		loadCashXScreen(window);
 	}
 	
-	public void x15Clicked(ActionEvent e) throws Exception
+	public void x15Clicked(ActionEvent e) throws Exception // what happens when x15 is clicked
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 		
@@ -52,7 +52,7 @@ public class CashXScreenController extends GameStart
 		}
 		loadCashXScreen(window);
 	}
-	public void x17Clicked(ActionEvent e) throws Exception
+	public void x17Clicked(ActionEvent e) throws Exception // what happens when x17 is clicked
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 		

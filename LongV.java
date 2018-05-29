@@ -1,3 +1,4 @@
+// you need this class because you can't access primitives in animation timer
 public class LongV
 {
     private long value;
@@ -7,7 +8,7 @@ public class LongV
         value = i;
     }
     
-    public long getValue()
+    public long getValue() // returns the value as a long
     {
     	return value;
     }

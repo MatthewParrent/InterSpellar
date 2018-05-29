@@ -15,7 +15,7 @@ public class EndScreenController extends GameStart
 	@FXML private Button playerMenuButton;
 	// ActionEvent gets event information
 	// In this case clicking Enter
-	public void playerMenuClicked(ActionEvent event) throws Exception
+	public void playerMenuClicked(ActionEvent event) throws Exception // what happens when player menu button is clicked
 	{
 		// gets window information from the event
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

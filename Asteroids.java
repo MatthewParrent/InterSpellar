@@ -28,23 +28,23 @@ public class Asteroids {
 		image = filename.get(6);
 	}
 
-	public void setVelocity(double y)
+	public void setVelocity(double y) // sets the velocity of the asteriod
 	{
 		velocityY = y;
 	}
-	public double getPositionX()
+	public double getPositionX() // gets the x position of the asteroid
 	{
 		return positionX;
 	}
-	public double getPositionY()
+	public double getPositionY() // gets the y position of the asteroid
 	{
 		return positionY;
 	}
-	public void newPosition(double t)
+	public void newPosition(double t) // gets the new position after t time has passed
 	{
 		positionY += (velocityY*t);
 	}
-	public void render(GraphicsContext g)
+	public void render(GraphicsContext g) // draws the asteroid
 	{
 		g.drawImage(image, positionX, positionY);
 	}

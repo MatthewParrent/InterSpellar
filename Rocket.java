@@ -57,30 +57,30 @@ public class Rocket
 		}
 	}
 	
-	public void setVelocity(double a)
+	public void setVelocity(double a) // changes velocity of rocket
 	{
 		velocityX = a;
 	}
 	
-	public double getPosition()
+	public double getPosition() // gets position of rocket
 	{
 		return positionX;
 	}
 	
-	public void setBought(boolean b)
+	public void setBought(boolean b) // sets whether the rocket is bought or not
 	{
 		bought = b;
 	}
-	public boolean getBought()
+	public boolean getBought() // tells whether rocket is bought or not
 	{
 		return bought;
 	}
-	public double getVelocity()
+	public double getVelocity() // gets velocity of rocket
 	{
 		return velocityX*vM;
 	}
 	
-	public void newPosition(double t)
+	public void newPosition(double t) // sets the new position of the rocket
 	{
 		positionX += velocityX*t*vM;
 	}
@@ -89,27 +89,28 @@ public class Rocket
 		g.drawImage(image, positionX, positionY);
 	}
 	
-	public String getRocketName()
+	public String getRocketName() // gets the name of the rocket
 	{
 		return name;
 	}
 	
-	public void addArmor()
+	public void addArmor() // adds armor to rocket
 	{
 		armor++;
 	}
 	
-	public int getArmor()
+	public int getArmor() // gets the armor of the rocket
 	{
 		return armor;
 	}
 	
-	public int getHitX()
+	// Next two methods help define hitbox
+	public int getHitX() // gets where the asteroid should hit the rocket in the x position
 	{
 		return hitX;
 	}
 	
-	public int getHitY()
+	public int getHitY() // gets where the asteroid should hit the rocket in the y position
 	{
 		return hitY;
 	}

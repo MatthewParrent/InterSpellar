@@ -13,7 +13,7 @@ public class ArmorMenuController extends GameStart
 	@FXML private Button largeButton;
 	@FXML private Button backToShopButton;
 	
-	public void smallButtonClicked(ActionEvent e) throws Exception
+	public void smallButtonClicked(ActionEvent e) throws Exception // what happens when small shield is clicked
 	{
 
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
@@ -26,7 +26,7 @@ public class ArmorMenuController extends GameStart
 		
 	}
 	
-	public void mediumButtonClicked(ActionEvent e) throws Exception
+	public void mediumButtonClicked(ActionEvent e) throws Exception // what happens when medium shield is clicked
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 
@@ -37,7 +37,7 @@ public class ArmorMenuController extends GameStart
 			loadArmorScreen(window);
 		}
 	}
-	public void largeButtonClicked(ActionEvent e) throws Exception
+	public void largeButtonClicked(ActionEvent e) throws Exception // what happens when large shield is clicked 
 	{	
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 
@@ -49,7 +49,7 @@ public class ArmorMenuController extends GameStart
 		}
 	}
 	
-	public void backToShopButtonClicked(ActionEvent e) throws Exception
+	public void backToShopButtonClicked(ActionEvent e) throws Exception // what happens when back is clicked
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 		enterShopMain(window);

@@ -13,7 +13,7 @@ public class BuyShipController extends GameStart
 	@FXML private Button DebtStarButton;
 	@FXML private Button playerMenuButton;
 	
-	public void buyApollo(ActionEvent e) throws Exception
+	public void buyApollo(ActionEvent e) throws Exception // buys the base ship
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 
@@ -21,7 +21,7 @@ public class BuyShipController extends GameStart
 		updateBoughtScreen(window);
 	}
 	
-	public void buyFXWing(ActionEvent e) throws Exception
+	public void buyFXWing(ActionEvent e) throws Exception // buys the FXWing
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 		
@@ -42,7 +42,7 @@ public class BuyShipController extends GameStart
 		}
 	}
 	
-	public void buyBlackOne(ActionEvent e) throws Exception
+	public void buyBlackOne(ActionEvent e) throws Exception // buys the Black One
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 		
@@ -63,7 +63,7 @@ public class BuyShipController extends GameStart
 		}
 	}
 	
-	public void buyMilleniumHawk(ActionEvent e) throws Exception
+	public void buyMilleniumHawk(ActionEvent e) throws Exception // buys Millenium Hawk
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 		
@@ -84,7 +84,7 @@ public class BuyShipController extends GameStart
 		}
 	}
 	
-	public void buyDebtStar(ActionEvent e) throws Exception
+	public void buyDebtStar(ActionEvent e) throws Exception // buys the debt star
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 		
@@ -105,7 +105,7 @@ public class BuyShipController extends GameStart
 		}
 	}
 	
-	public void playerMenuButtonClicked(ActionEvent e) throws Exception
+	public void playerMenuButtonClicked(ActionEvent e) throws Exception // what happens when back to player menu is clicked
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 		

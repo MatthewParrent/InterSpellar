@@ -16,25 +16,25 @@ public class Stars
 		
 	}
 	
-	public void setVelocity(double y)
+	public void setVelocity(double y) // sets velocity of stars
 	{
 		velocityY = y;
 	}
-	public double getPositionX()
+	public double getPositionX() // gets the x position of the star
 	{
 		return positionX;
 	}
-	public double getPositionY()
+	public double getPositionY() // gets the y position of the star
 	{
 		return positionY;
 	}
 	
-	public void newPosition(double t)
+	public void newPosition(double t) // gets the new position after t time of the star
 	{
 		positionY += velocityY*t;
 	}
 	
-	public void render(GraphicsContext g)
+	public void render(GraphicsContext g) //draws the star
 	{
 		g.drawImage(image, positionX, positionY);
 	}

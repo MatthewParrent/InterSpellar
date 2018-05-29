@@ -14,12 +14,12 @@ public class AllPlayers
 		players.add(p);
 	}
 	
-	public static Player getPlayer()
+	public static Player getPlayer() // gets latest player
 	{
 		return players.get(players.size()-1);
 	}
 	
-	public static ArrayList<Player> getPlayers()
+	public static ArrayList<Player> getPlayers() // returns the arraylist of players
 	{
 		return players;
 	}

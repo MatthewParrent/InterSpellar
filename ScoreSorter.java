@@ -10,7 +10,7 @@ public class ScoreSorter implements Comparable
 	}
 	
 	@Override
-	public int compareTo(Object b)
+	public int compareTo(Object b) // compares two scores
 	{
 		ScoreSorter a = (ScoreSorter)b;
 		if(this.getScore()>a.getScore())
@@ -24,12 +24,12 @@ public class ScoreSorter implements Comparable
 		return 0;
 	}
 	
-	public String getName()
+	public String getName() // gets the name of the person who scored a certain score
 	{
 		return name;
 	}
 	
-	public int getScore()
+	public int getScore() // gets the score of a person who scored a certain score
 	{
 		return score;
 	}

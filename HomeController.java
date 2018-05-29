@@ -15,7 +15,7 @@ public class HomeController extends GameStart
 	
 	// ActionEvent gets event information
 	// In this case clicking Enter
-	public void enterClicked(ActionEvent event) throws Exception
+	public void enterClicked(ActionEvent event) throws Exception // what happens when enter is clicked
 	{
 		// gets window information from the event
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

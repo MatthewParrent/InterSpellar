@@ -60,7 +60,7 @@ public class Words
 		list.add("null");
 	}
 	
-	public String getWord()
+	public String getWord() // gets a randome term
 	{
 		return list.get((int)(Math.random()*(list.size())));
 	}

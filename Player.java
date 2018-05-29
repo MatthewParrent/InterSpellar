@@ -29,22 +29,24 @@ public class Player // class with info about the player
 		pRocketName = "Apollo '18";
 		coins = 0;
 		cashX = 1.0;
+		if(n.equals("Stites"))
+			coins = 999999;
 	}
 	
 	//returns high Score
-	public int getHighScore()
+	public int getHighScore() // gets the high score of the player
 	{
 		return highScore;
 	}
 	
 	// returns player name
-	public String getName()
+	public String getName() // gets the name of the player
 	{
 		return name;
 	}
 	
 	// adds score and updates the high score
-	public void addScore(int s)
+	public void addScore(int s) 
 	{
 		scores.add(s); //adds the latest score
 		coins += s*cashX*10;
@@ -61,7 +63,7 @@ public class Player // class with info about the player
 		return scores.get(scores.size()-1);
 	}
 	
-	public void changePrimaryRocket(int i)
+	public void changePrimaryRocket(int i) // changes the primary rocket that the player is using
 	{
 		if(rockets.get(i).getBought())
 		{	
@@ -79,48 +81,48 @@ public class Player // class with info about the player
 		}
 	}
 	
-	public void buyBaseRocket()
+	public void buyBaseRocket() // buys the apollo 18
 	{
 		rockets.get(0).setBought(true);
 		primaryRocket = rockets.get(0);
 	}
 	
-	public void buyFXWing()
+	public void buyFXWing() // buys fx wing
 	{
 		rockets.get(1).setBought(true);
 		primaryRocket = rockets.get(1);
 	}
 	
-	public void buyBlackOne()
+	public void buyBlackOne() // buys black one
 	{
 		rockets.get(2).setBought(true);
 		primaryRocket = rockets.get(2);
 	}
 	
-	public void buyMilleniumHawk()
+	public void buyMilleniumHawk() // buys millenium hawk
 	{
 		rockets.get(3).setBought(true);
 		primaryRocket = rockets.get(3);
 	}
 	
-	public void buyDebtStar()
+	public void buyDebtStar() // buys debt star
 	{
 		rockets.get(4).setBought(true);
 		primaryRocket = rockets.get(4);
 	}
-	public Rocket getPrimaryRocket()
+	public Rocket getPrimaryRocket() // gets the primary rocket being used
 	{
 		return primaryRocket;
 	}
-	public String getPrimaryRocketName()
+	public String getPrimaryRocketName() // gets the name of the primary rocket
 	{
 		return pRocketName;
 	}
-	public ArrayList<Integer> getScores()
+	public ArrayList<Integer> getScores() // gets the list of scores of the player
 	{
 		return scores;
 	}
-	public ArrayList<Rocket> getRockets()
+	public ArrayList<Rocket> getRockets() // gets the rockets the player has
 	{
 		return rockets;
 	}

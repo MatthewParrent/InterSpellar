@@ -18,7 +18,7 @@ public class TypeAsker
 		window = new Stage();
 		display();
 	}
-	public void display()
+	public void display() // displays the alert box asking to type a certain term
 	{
 	//	window = new Stage();
 				
@@ -57,7 +57,7 @@ public class TypeAsker
 		window.show();
 	}
 	
-	public void checkClose(String code, TextField t, String word, Stage window, boolean b)
+	public void checkClose(String code, TextField t, String word, Stage window, boolean b) // checks if window should be closed
 	{
 		if(code.equals("ENTER")&& t.getText().contains(word) || b)
 		{	
@@ -66,7 +66,7 @@ public class TypeAsker
 		}
 	}
 	
-	public void close()
+	public void close() // closes the window
 	{
 		window.close();
 	}

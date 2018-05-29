@@ -8,7 +8,7 @@ public class HighScoresScreenController extends GameStart
 {
 	@FXML private Button playerMenuButton;
 	
-	public void playerMenuButtonClicked(ActionEvent e) throws Exception
+	public void playerMenuButtonClicked(ActionEvent e) throws Exception // what happens when back to player menu is clicked
 	{
 		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 		
